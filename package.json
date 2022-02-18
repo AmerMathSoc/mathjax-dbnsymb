@@ -1,0 +1,34 @@
+{
+  "name": "@amermathsoc/mathjax-dbnsymb",
+  "main": "./js/dbnsymb.js",
+  "version": "1.0.0",
+  "description": "An extension matching dbnsymb for MathJax's TeX input",
+  "keywords": [
+    "MathJax",
+    "TeX",
+    "dbnsymb"
+  ],
+  "license": "Apache-2.0",
+  "contributors": [
+    "David M. Jones <dmj@ams.org> (http://www.ams.org)",
+    "Peter Krautzberger (https://github.com/pkra)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AmerMathSoc/mathjax-dbnsymb"
+  },
+  "homepage": "https://github.com/AmerMathSoc/mathjax-dbnsymb/",
+  "bugs": {
+    "url": "https://github.com/AmerMathSoc/mathjax-dbnsymb/issues"
+  },
+  "devDependencies": {
+    "mathjax-full": "3.2.0",
+    "standard-version": "9.3.2",
+    "typescript": "4.5.5"
+  },
+  "scripts": {
+    "release": "standard-version",
+    "pretest": "npx tsc",
+    "test": "node test/base.js"
+  }
+}
