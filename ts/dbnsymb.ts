@@ -42,7 +42,17 @@ const dbnData: dbnObj = {
     height: ".7em",
     alt: "two upward arrows crossed with disc",
   },
+
+type dbnMacro = {
+  [key: string]: string | [string, string];
 };
+const dbnMacros: dbnMacro = {
+  dbnsymb: "dbnsymb",
+};
+
+Object.keys(dbnData).forEach(
+  (key) => (dbnMacros[key] = ["Macro", `\\dbnsymb{${key}}`])
+);
 
 dbnsymbMethods.dbnsymb = function (parser: TexParser, name: string) {
   const arg = parser.GetArgument(name);
@@ -51,14 +61,7 @@ dbnsymbMethods.dbnsymb = function (parser: TexParser, name: string) {
 };
 dbnsymbMethods.Macro = BaseMethods.Macro;
 
-new CommandMap(
-  "dbnsymb-macros",
-  {
-    dbnsymb: "dbnsymb",
-    doublepoint: ["Macro", "\\dbnsymb{doublepoint}"],
-  },
-  dbnsymbMethods
-);
+new CommandMap("dbnsymb-macros", dbnMacros, dbnsymbMethods);
 
 export const configuration = Configuration.create("dbnsymb", {
   handler: {
