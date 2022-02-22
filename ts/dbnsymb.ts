@@ -15,9 +15,7 @@
  */
 
 import { Configuration } from "mathjax-full/js/input/tex/Configuration.js";
-import {
-  CommandMap,
-} from "mathjax-full/js/input/tex/SymbolMap.js";
+import { CommandMap } from "mathjax-full/js/input/tex/SymbolMap.js";
 import { ParseMethod } from "mathjax-full/js/input/tex/Types.js";
 import TexParser from "mathjax-full/js/input/tex/TexParser";
 import BaseMethods from "mathjax-full/js/input/tex/base/BaseMethods.js";
