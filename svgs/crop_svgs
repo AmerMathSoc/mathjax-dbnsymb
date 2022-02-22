@@ -31,7 +31,7 @@ sub svg_open_element {
         my $new_lly = $lly;
 
         my $new_urx = $vb_urx - $llx;
-        my $new_ury = $vb_ury; # - $lly; #?
+        my $new_ury = $vb_ury;# - $lly; #?
 
         return qq{$prefix width="$new_width" height="$new_height" viewBox="$new_llx $new_lly $new_urx $new_ury">\n};
 
@@ -47,7 +47,7 @@ sub crop_svg {
 
     open(my $in, "<", $svg_in) or die "Can't read $svg_in: $!\n";
 
-    (my $svg_out = $svg_in) =~ s{\.svg}{-cropped.svg};
+    (my $svg_out = $svg_in) =~ s{\.svg}{.SVG};
 
     open(my $out, ">", $svg_out) or die "Can't write $svg_out: $!\n";
 
