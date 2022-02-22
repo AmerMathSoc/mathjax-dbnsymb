@@ -24,9 +24,9 @@ let dbnsymbMethods: Record<string, ParseMethod> = {};
 
 interface dbnDatum {
   src: string;
-  valign: string;
-  width: string;
-  height: string;
+  valign?: string;
+  width?: string;
+  height?: string;
   alt: string;
 }
 
