@@ -14,6 +14,12 @@ const theBigString =
   $$\\sigma_yZ(\\OpenHopfUp_{\\!x}^y)  = \\Omega_y\\exp_\\#(\\botright_x^{\\!\\!y})$$
   $$ {\\mathcal A}^w(\\cappededge)$$
   $$(\\crossing)$$
+  $$(\\hsmoothing-\\crossing)$$
+  $$V(\\overcrossing)$$
+  $$\\langle\\slashoverback\\rangle$$
+  $$zC(\\smoothing)$$
+  $$(\\undercrossing)$$
+  $$(\\upupsmoothing)$$
   `
 
 fs.writeFileSync(__dirname+'/test.html' ,mj(theBigString, true));
