@@ -1,0 +1,85 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+use version; our $VERSION = qv '0.0.0';
+
+my $coord = qr{-?\d+(?:\.\d+)?};
+
+sub svg_open_element {
+    my $orig_svg = shift;
+    my $bbox     = shift;
+
+    my ($llx, $lly, $urx, $ury) = split / /, $bbox;
+
+    # print "Bounding box: llx = $llx, lly = $lly, urx = $urx, ury = $ury\n";
+
+    if ( $orig_svg =~ m{(<svg .*?) width="($coord)" height="($coord)" viewBox="($coord) ($coord) ($coord) ($coord)"}) {
+        my $prefix = $1;
+
+        my ($width, $height, $vb_llx, $vb_lly, $vb_urx, $vb_ury) = ($2, $3, $4, $5, $6, $7);
+
+        die "Unexpected viewBox" unless $vb_llx == 0 && $vb_lly == 0;
+
+        # print "width = $width, height = $height, vb_llx = $vb_llx, vb_lly = $vb_lly, vb_urx = $vb_urx, vb_ury = $vb_ury\n";
+
+        my $new_width  = $urx - $llx;
+        my $new_height = $ury - $lly;
+
+        my $new_llx = $llx;
+        my $new_lly = $lly;
+
+        my $new_urx = $vb_urx - $llx;
+        my $new_ury = $vb_ury; # - $lly; #?
+
+        return qq{$prefix width="$new_width" height="$new_height" viewBox="$new_llx $new_lly $new_urx $new_ury">\n};
+
+    } else {
+        die "Unparsed svg element: $orig_svg\n";
+    }
+
+    return;
+}
+
+sub crop_svg {
+    my $svg_in = shift;
+
+    open(my $in, "<", $svg_in) or die "Can't read $svg_in: $!\n";
+
+    (my $svg_out = $svg_in) =~ s{\.svg}{-cropped.svg};
+
+    open(my $out, ">", $svg_out) or die "Can't write $svg_out: $!\n";
+
+    my $svg_open_orig;
+
+    while (<$in>) {
+        m{<svg } and do {
+            $svg_open_orig = $_;
+            
+            next;
+        };
+
+        m{<!-- Original BoundingBox: ($coord $coord $coord $coord) -->} and do {
+            my $bbox = $1;
+            
+            print { $out } svg_open_element($svg_open_orig, $bbox);
+        };
+
+        print { $out } $_;
+    }
+
+    close($out);
+
+    close($in);
+};
+
+while (my $orig_svg = shift) {
+    print "Processing $orig_svg\n";
+
+    crop_svg($orig_svg);
+
+    print "\n";
+}
+
+__END__
