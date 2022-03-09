@@ -14,11 +14,12 @@
  *  limitations under the License.
  */
 
-import { Configuration } from "mathjax-full/js/input/tex/Configuration.js";
-import { CommandMap } from "mathjax-full/js/input/tex/SymbolMap.js";
-import { ParseMethod } from "mathjax-full/js/input/tex/Types.js";
+import { Configuration } from "mathjax-full/js/input/tex/Configuration";
+import { CommandMap } from "mathjax-full/js/input/tex/SymbolMap";
+import { ParseMethod } from "mathjax-full/js/input/tex/Types";
 import TexParser from "mathjax-full/js/input/tex/TexParser";
-import BaseMethods from "mathjax-full/js/input/tex/base/BaseMethods.js";
+import BaseMethods from "mathjax-full/js/input/tex/base/BaseMethods";
+import TexError from 'mathjax-full/js/input/tex/TexError';
 
 let dbnsymbMethods: Record<string, ParseMethod> = {};
 
@@ -162,7 +163,7 @@ Object.keys(dbnData).forEach(
 
 dbnsymbMethods.dbnsymb = function (parser: TexParser, name: string) {
   const arg = parser.GetArgument(name);
-  if (!dbnData[arg]) return;
+  if (!dbnData[arg]) throw new TexError('dbnInvalidOption', 'mathjax-dbnSymb: invalid argument %1', arg);
   parser.Push(parser.create("token", "mglyph", dbnData[arg])); // NOTE mglyph gets TeX class ORD (as desired)
 };
 dbnsymbMethods.Macro = BaseMethods.Macro;

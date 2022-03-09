@@ -20,6 +20,7 @@ const theBigString =
   $$zC(\\smoothing)$$
   $$(\\undercrossing)$$
   $$(\\upupsmoothing)$$
+  $$ V(\\dbnsymb{foo})$$ 
   `
 
 fs.writeFileSync(__dirname+'/test.html' , '<!DOCTYPE html>\n'+mj(theBigString, true));
