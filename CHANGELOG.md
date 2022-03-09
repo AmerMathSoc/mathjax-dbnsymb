@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v1.0.0...v1.1.0) (2022-03-09)
+
+
+### Features
+
+* major data overhaul ([290e73c](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/290e73c1599b1201c17f0c3c889babace3427f4a)), closes [#4](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/4) [#6](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/6) [#8](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/8)
+
+
+### Bug Fixes
+
+* backoverslash alt ([6138ff3](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/6138ff31d7b0d2ac6a11457e4eab1f5d13cdb882))
+
 ## 1.0.0 (2022-02-22)
 
 
