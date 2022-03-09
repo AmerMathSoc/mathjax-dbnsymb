@@ -1,7 +1,7 @@
 {
   "name": "@amermathsoc/mathjax-dbnsymb",
   "main": "./js/dbnsymb.js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An extension matching dbnsymb for MathJax's TeX input",
   "keywords": [
     "MathJax",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v1.1.0...v1.2.0) (2022-03-09)
+
+
+### Features
+
+* add TeX parsing error ([3999fa0](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/3999fa04a3c515a480ef0cd987a1b5de1188c4ec)), closes [#9](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/9)
+
 ## [1.1.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v1.0.0...v1.1.0) (2022-03-09)
 
 
