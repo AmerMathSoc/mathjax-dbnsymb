@@ -22,4 +22,4 @@ const theBigString =
   $$(\\upupsmoothing)$$
   `
 
-fs.writeFileSync(__dirname+'/test.html' ,mj(theBigString, true));
+fs.writeFileSync(__dirname+'/test.html' , '<!DOCTYPE html>\n'+mj(theBigString, true));
