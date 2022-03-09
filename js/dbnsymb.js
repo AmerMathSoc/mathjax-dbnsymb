@@ -16,9 +16,10 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.configuration = void 0;
-var Configuration_js_1 = require("mathjax-full/js/input/tex/Configuration.js");
-var SymbolMap_js_1 = require("mathjax-full/js/input/tex/SymbolMap.js");
-var BaseMethods_js_1 = require("mathjax-full/js/input/tex/base/BaseMethods.js");
+var Configuration_1 = require("mathjax-full/js/input/tex/Configuration");
+var SymbolMap_1 = require("mathjax-full/js/input/tex/SymbolMap");
+var BaseMethods_1 = require("mathjax-full/js/input/tex/base/BaseMethods");
+var TexError_1 = require("mathjax-full/js/input/tex/TexError");
 var dbnsymbMethods = {};
 var dbnData = {
     actsonleft: {
@@ -141,12 +142,12 @@ Object.keys(dbnData).forEach(function (key) { return (dbnMacros[key] = ["Macro",
 dbnsymbMethods.dbnsymb = function (parser, name) {
     var arg = parser.GetArgument(name);
     if (!dbnData[arg])
-        return;
+        throw new TexError_1.default('dbnInvalidOption', 'mathjax-dbnSymb: invalid argument %1', arg);
     parser.Push(parser.create("token", "mglyph", dbnData[arg]));
 };
-dbnsymbMethods.Macro = BaseMethods_js_1.default.Macro;
-new SymbolMap_js_1.CommandMap("dbnsymb-macros", dbnMacros, dbnsymbMethods);
-exports.configuration = Configuration_js_1.Configuration.create("dbnsymb", {
+dbnsymbMethods.Macro = BaseMethods_1.default.Macro;
+new SymbolMap_1.CommandMap("dbnsymb-macros", dbnMacros, dbnsymbMethods);
+exports.configuration = Configuration_1.Configuration.create("dbnsymb", {
     handler: {
         macro: ["dbnsymb-macros"],
     },
