@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v1.2.0...v2.0.0) (2023-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* Switches from CJS to ESM
+
+### Features
+
+* upgrade to MathJax v4 ([d702fe2](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/d702fe2324bd2ebe53719c57e8f955872962c81c)), closes [#12](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/12)
+
 ## [1.2.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v1.1.0...v1.2.0) (2022-03-09)
 
 
