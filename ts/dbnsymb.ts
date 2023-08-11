@@ -14,12 +14,12 @@
  *  limitations under the License.
  */
 
-import { Configuration } from "mathjax-full/js/input/tex/Configuration";
-import { CommandMap } from "mathjax-full/js/input/tex/SymbolMap";
-import { ParseMethod } from "mathjax-full/js/input/tex/Types";
-import TexParser from "mathjax-full/js/input/tex/TexParser";
-import BaseMethods from "mathjax-full/js/input/tex/base/BaseMethods";
-import TexError from 'mathjax-full/js/input/tex/TexError';
+import { Configuration } from "mathjax-full/js/input/tex/Configuration.js";
+import { CommandMap } from "mathjax-full/js/input/tex/SymbolMap.js";
+import { ParseMethod } from "mathjax-full/js/input/tex/Types.js";
+import TexParser from "mathjax-full/js/input/tex/TexParser.js";
+import BaseMethods from "mathjax-full/js/input/tex/base/BaseMethods.js";
+import TexError from 'mathjax-full/js/input/tex/TexError.js';
 
 let dbnsymbMethods: Record<string, ParseMethod> = {};
 

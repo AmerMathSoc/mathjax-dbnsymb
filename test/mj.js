@@ -1,35 +1,41 @@
-const { mathjax } = require('mathjax-full/js/mathjax.js');
-const { TeX } = require('mathjax-full/js/input/tex.js');
-const { SVG } = require('mathjax-full/js/output/svg.js');
-const { liteAdaptor } = require('mathjax-full/js/adaptors/liteAdaptor.js');
-const { RegisterHTMLHandler } = require('mathjax-full/js/handlers/html.js');
+import { mathjax } from 'mathjax-full/js/mathjax.js';
+mathjax.asyncLoad = async (name) => import(name + '.js');
+import { TeX } from 'mathjax-full/js/input/tex.js';
+import { SVG } from 'mathjax-full/js/output/svg.js';
+import { liteAdaptor } from 'mathjax-full/js/adaptors/liteAdaptor.js';
+import { RegisterHTMLHandler } from 'mathjax-full/js/handlers/html.js';
 
-const {
+import {
   BaseConfiguration,
-} = require('mathjax-full/js/input/tex/base/BaseConfiguration.js');
+} from 'mathjax-full/js/input/tex/base/BaseConfiguration.js';
 
-const dbnsymb = require('../js/dbnsymb.js').configuration;
+import { configuration as dbnsymb } from '../js/dbnsymb.js';
 
 const adaptor = liteAdaptor();
 RegisterHTMLHandler(adaptor);
 
 const tex = new TeX({
-  packages: [BaseConfiguration.name, dbnsymb.name], // NOTE 'textmacros', cf note above on
+  packages: [BaseConfiguration.name, dbnsymb.name],
+});
+
+import { MathJaxModernFont } from 'mathjax-modern-font/mjs/svg.js';
+
+const modernFont = new MathJaxModernFont({
+  dynamicPrefix: 'mathjax-modern-font/mjs/svg/dynamic'
 });
 
 const svg = new SVG({
+  fontData: modernFont,
   fontCache: 'global',
   displayAlign: 'left',
   displayIndent: '0',
 });
 
-module.exports = (documentstring) => {
+export const mj = async (documentstring) => {
   const mj = mathjax.document(documentstring, {
     InputJax: tex,
     OutputJax: svg,
   });
-  mj.render();
-  return (
-    adaptor.doctype(mj.document) + adaptor.outerHTML(adaptor.root(mj.document))
-  );
+  await mathjax.handleRetriesFor(() => mj.render());
+  return adaptor.outerHTML(adaptor.root(mj.document));
 };
