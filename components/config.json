@@ -1,0 +1,18 @@
+{
+  "build": {
+    "id": "[ams]/dbnsymb",
+    "component": "input/tex/extension/dbnsymb",
+    "js": "../js",
+    "ts": "../ts",
+    "targets": ["dbnsymb.ts"]
+  },
+  "webpack": {
+    "name": "dbnsymb",
+    "js": "../js",
+    "libs": [
+      "components/src/input/tex-base/lib",
+      "components/src/core/lib"
+    ],
+    "dist": "../browser/"
+  }
+}
