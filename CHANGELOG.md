@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v2.0.0...v2.1.0) (2023-11-14)
+
+
+### Features
+
+* add client-side build ([3dc23c6](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/3dc23c68de9b45f75c91805ee45d5f70675bd9a8)), closes [#13](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/13)
+
+
+### Bug Fixes
+
+* compatibility with mathjax v4-beta.4 ([dd6ac6e](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/dd6ac6ea47de6621a8e6e969f99d3563ee2ccd9e)), closes [#14](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/14) [#15](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/15)
+
 ## [2.0.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v1.2.0...v2.0.0) (2023-08-11)
 
 
