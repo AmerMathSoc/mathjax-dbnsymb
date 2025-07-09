@@ -13,10 +13,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-import { Configuration } from "mathjax-full/js/input/tex/Configuration.js";
-import { CommandMap } from "mathjax-full/js/input/tex/TokenMap.js";
-import BaseMethods from "mathjax-full/js/input/tex/base/BaseMethods.js";
-import TexError from 'mathjax-full/js/input/tex/TexError.js';
+import { Configuration } from "@mathjax/src/js/input/tex/Configuration.js";
+import { CommandMap } from "@mathjax/src/js/input/tex/TokenMap.js";
+import BaseMethods from "@mathjax/src/js/input/tex/base/BaseMethods.js";
+import TexError from '@mathjax/src/js/input/tex/TexError.js';
 let dbnsymbMethods = {};
 const dbnData = {
     actsonleft: {

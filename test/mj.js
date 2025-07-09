@@ -1,13 +1,13 @@
-import { mathjax } from 'mathjax-full/js/mathjax.js';
-mathjax.asyncLoad = async (name) => import(name + '.js');
-import { TeX } from 'mathjax-full/js/input/tex.js';
-import { SVG } from 'mathjax-full/js/output/svg.js';
-import { liteAdaptor } from 'mathjax-full/js/adaptors/liteAdaptor.js';
-import { RegisterHTMLHandler } from 'mathjax-full/js/handlers/html.js';
+import { mathjax } from '@mathjax/src/js/mathjax.js';
+import '@mathjax/src/js/util/asyncLoad/esm.js';
+import { TeX } from '@mathjax/src/js/input/tex.js';
+import { SVG } from '@mathjax/src/js/output/svg.js';
+import { liteAdaptor } from '@mathjax/src/js/adaptors/liteAdaptor.js';
+import { RegisterHTMLHandler } from '@mathjax/src/js/handlers/html.js';
 
 import {
   BaseConfiguration,
-} from 'mathjax-full/js/input/tex/base/BaseConfiguration.js';
+} from '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
 
 import { configuration as dbnsymb } from '../js/dbnsymb.js';
 
@@ -18,10 +18,10 @@ const tex = new TeX({
   packages: [BaseConfiguration.name, dbnsymb.name],
 });
 
-import { MathJaxModernFont } from 'mathjax-modern-font/mjs/svg.js';
+import { MathJaxNewcmFont } from '@mathjax/mathjax-newcm-font/mjs/svg.js';
 
-const modernFont = new MathJaxModernFont({
-  dynamicPrefix: 'mathjax-modern-font/mjs/svg/dynamic'
+const modernFont = new MathJaxNewcmFont({
+  dynamicPrefix: '@mathjax/mathjax-newcm-font/mjs/svg/dynamic'
 });
 
 const svg = new SVG({
