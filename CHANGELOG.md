@@ -1,6 +1,22 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [3.0.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v2.1.0...v3.0.0) (2025-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* switches from mathjax-full to @mathjax/src package.
+
+### Features
+
+* upgrade and adjust to mathjax v4.0.0-rc.4 ([2729a16](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/2729a1649fedb8bfefd2403f3da3f16c61f6164d)), closes [#16](https://github.com/AmerMathSoc/mathjax-dbnsymb/issues/16)
+
+
+### Bug Fixes
+
+* **package:** switch to commit-and-tag-version ([a8df1e7](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/a8df1e71083e0a6dd048f8f89c0a082563fde33f))
 
 ## [2.1.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v2.0.0...v2.1.0) (2023-11-14)
 
