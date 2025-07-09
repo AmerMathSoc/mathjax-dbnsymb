@@ -2,6 +2,8 @@
 
 MathJax TeX extension to re-implement `dbnsymb`.
 
+We thank Prof. Bar-Natan for the kind permission to adapt [the symbol font dbnsymb](https://www.math.toronto.edu/~drorbn/projects/dbnsymb/dbnsymbman.html).
+
 ## MathJax Extension: `dbnsymb.js`
 
 This extension implements a TeX macro `\dbnsymb` as well as the following macros:
