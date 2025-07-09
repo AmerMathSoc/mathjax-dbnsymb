@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.1](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v3.0.0...v3.0.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* **package.json:** git url ([c71b3f0](https://github.com/AmerMathSoc/mathjax-dbnsymb/commit/c71b3f0c56600d5874918bbc5bdbed8f86f1b1df))
+
 ## [3.0.0](https://github.com/AmerMathSoc/mathjax-dbnsymb/compare/v2.1.0...v3.0.0) (2025-07-09)
 
 
