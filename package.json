@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/AmerMathSoc/mathjax-dbnsymb"
+    "url": "git://github.com/AmerMathSoc/mathjax-dbnsymb.git"
   },
   "homepage": "https://github.com/AmerMathSoc/mathjax-dbnsymb/",
   "bugs": {
